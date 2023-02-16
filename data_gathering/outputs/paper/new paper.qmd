@@ -26,11 +26,9 @@ status_code(arxiv)
 You can add options to executable code like this
 
 ```{r}
-NASA_APOD_20190719 <-
-  GET("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2021-12-26")
-
-NASA_APOD_20190719 <-
-  GET("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2019-07-19")
+library(knitr)
+library(here)
+include_graphics(here::here("NASA_APOD_20030125.jpg")) 
 ```
 
 The `echo: false` option disables the printing of code (only output is displayed).
