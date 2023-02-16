@@ -1,0 +1,36 @@
+---
+title: "data_gathering"
+format: pdf
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+library(httr)
+library(tidyverse)
+library(xml2)
+
+arxiv <-
+  GET("http://export.arxiv.org/api/query?id_list=2111.09299")
+
+status_code(arxiv)
+```
+
+You can add options to executable code like this
+
+```{r}
+NASA_APOD_20190719 <-
+  GET("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2021-12-26")
+
+NASA_APOD_20190719 <-
+  GET("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2019-07-19")
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
